@@ -1,0 +1,49 @@
+body {
+  background-color: gray;
+}
+
+main {
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  margin: auto;
+  padding: 20px;
+}
+
+#new-task {
+  font-weight: 100;
+  color: gray;
+  font-style: italic;
+}
+
+li {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
+}
+
+input {
+  border: none;
+}
+
+.content {
+  margin: 0;
+  width: 90%;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: darkgray;
+}
+
+.delete {
+  width: fit-content;
+}
+
+.finished {
+  color: gray;
+  text-decoration: line-through;
+}
