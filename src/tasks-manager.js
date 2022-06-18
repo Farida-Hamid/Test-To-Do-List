@@ -4,6 +4,10 @@ export default class Tasks {
   constructor() {
     this.list = this.get();
   }
+  
+  set = (list) => {
+    localStorage.setItem('memory', JSON.stringify(list));
+  }
 
   get = () => {
     const data = localStorage.getItem('memory');
@@ -50,7 +54,7 @@ export default class Tasks {
       text.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' && text.value) {
           this.list[index].description = text.value;
-          localStorage.setItem('memory', JSON.stringify(this.list));
+          set(this.list);
         }
       });
     });
@@ -65,7 +69,7 @@ export default class Tasks {
       index: this.list.length,
     };
     this.list.push(task);
-    localStorage.setItem('memory', JSON.stringify(this.list));
+    set(this.list);
     this.loader();
   }
 
@@ -74,7 +78,7 @@ export default class Tasks {
     for (let i = 0; i < this.list.length; i += 1) {
       this.list[i].index = i;
     }
-    localStorage.setItem('memory', JSON.stringify(this.list));
+    set(this.list);
 
     this.loader();
   }
